@@ -3,417 +3,307 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hebron Educational Hub | Free Learning Resources for Device Configuration</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <title>DigiTech | Printer Technology & Troubleshooting Education</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
     <style>
-        :root {
-            --edu-blue: #003087;
-            --nav-dark: #2f2f2f;
-            --text-gray: #444;
-            --light-bg: #f8f9fa;
-            --green: #28a745;
+        body { font-family: 'Inter', sans-serif; }
+        .hero-pattern {
+            background-color: #f8fafc;
+            background-image: radial-gradient(#cbd5e1 0.5px, transparent 0.5px);
+            background-size: 24px 24px;
         }
-        body {
-            font-family: 'Roboto', sans-serif;
-            margin: 0;
-            background: #fff;
-            color: #333;
-            line-height: 1.6;
-        }
-        /* HEADER */
-        .header-top {
-            background: var(--edu-blue);
-            color: #fff;
-            padding: 20px 8%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .logo-main {
-            font-size: 36px;
-            font-weight: 900;
-            letter-spacing: -1.5px;
-        }
-        .logo-sub {
-            font-size: 13px;
-            letter-spacing: 1.5px;
-            opacity: 0.9;
-            margin-top: 4px;
-        }
-        .info-line {
-            font-size: 20px;
-            font-weight: 600;
-            background: rgba(255,255,255,0.15);
-            padding: 12px 20px;
-            border-radius: 6px;
-        }
-        /* HERO */
-        .hero {
-            background: linear-gradient(180deg, var(--edu-blue), #002361);
-            color: #fff;
-            text-align: center;
-            padding: 100px 20px;
-        }
-        .hero h1 {
-            font-size: 48px;
-            font-weight: 500;
-            margin: 0 0 20px;
-        }
-        .hero p {
-            font-size: 22px;
-            opacity: 0.9;
-            max-width: 800px;
-            margin: 0 auto 40px;
-        }
-        /* SEARCH */
-        .search-wrapper {
-            max-width: 900px;
-            margin: 0 auto;
-            background: #fff;
-            padding: 12px;
-            border-radius: 12px;
-            display: flex;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
-        }
-        .search-wrapper input {
-            flex: 1;
-            border: none;
-            padding: 25px 30px;
-            font-size: 26px;
-            outline: none;
-        }
-        .btn-search {
-            background: var(--green);
-            color: #fff;
-            border: none;
-            padding: 0 50px;
-            font-size: 22px;
-            font-weight: 700;
-            border-radius: 8px;
-            cursor: pointer;
-        }
-        /* COMMON ISSUES & TIPS SECTION */
-        .issues-section {
-            padding: 80px 8%;
-            background: var(--light-bg);
-        }
-        .issues-title {
-            text-align: center;
-            font-size: 36px;
-            font-weight: 500;
-            margin-bottom: 50px;
-            color: var(--edu-blue);
-        }
-        .issues-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        .issue-card {
-            background: #fff;
-            border-radius: 12px;
-            padding: 30px;
+        .step-card:hover {
+            transform: translateY(-4px);
             box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
         }
-        .issue-card h3 {
-            font-size: 22px;
-            color: var(--edu-blue);
-            margin-bottom: 15px;
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
         }
-        .issue-card ul {
-            list-style: none;
-            padding: 0;
-        }
-        .issue-card li {
-            padding: 10px 0;
-            position: relative;
-            padding-left: 30px;
-        }
-        .issue-card li::before {
-            content: "→";
-            color: var(--green);
-            font-weight: 900;
-            position: absolute;
-            left: 0;
-        }
-        /* RESULT MODULE */
-        .result-module {
-            display: none;
-            max-width: 900px;
-            margin: 60px auto;
-            background: #fff;
-            border-radius: 12px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
-            overflow: hidden;
-        }
-        .module-title {
-            background: var(--light-bg);
-            padding: 20px 40px;
-            font-size: 24px;
-            font-weight: 700;
-            color: var(--edu-blue);
-            text-align: center;
-        }
-        .guide-list {
-            padding: 40px;
-        }
-        .guide-item {
-            padding: 20px 0;
-            border-bottom: 1px solid #eee;
-            display: flex;
-            align-items: flex-start;
-            gap: 20px;
-        }
-        .guide-item:last-child { border-bottom: none; }
-        .guide-num {
-            background: var(--edu-blue);
-            color: #fff;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
+        .icon-circle {
+            width: 48px;
+            height: 48px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-weight: 900;
-            flex-shrink: 0;
-        }
-        .guide-content h3 {
-            margin: 0 0 10px;
-            color: var(--edu-blue);
-            font-size: 20px;
-        }
-        .guide-content p {
-            margin: 0;
-            color: var(--text-gray);
-        }
-        .download-link {
-            display: inline-block;
-            margin-top: 15px;
-            color: var(--green);
-            font-weight: 700;
-            text-decoration: underline;
-        }
-        /* CATEGORY GRID */
-        .category-grid {
-            padding: 80px 8%;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-            background: #fff;
-        }
-        .card {
-            background: #fff;
             border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            text-align: center;
-        }
-        .card img {
-            width: 100%;
-            height: 220px;
-            object-fit: contain;
-            background: #f8f9fa;
-        }
-        .card h3 {
-            margin: 25px 15px 15px;
-            font-size: 22px;
-            color: var(--edu-blue);
-        }
-        .card p {
-            padding: 0 25px;
-            font-size: 15px;
-            color: var(--text-gray);
-            margin-bottom: 30px;
-        }
-        .view-btn {
-            background: var(--edu-blue);
-            color: #fff;
-            border: none;
-            padding: 14px 35px;
-            font-size: 16px;
-            font-weight: 700;
-            border-radius: 6px;
-            margin-bottom: 35px;
-            cursor: pointer;
-        }
-        /* FOOTER */
-        footer {
-            background: #1a1a1a;
-            color: #aaa;
-            padding: 70px 8% 40px;
-            font-size: 14px;
-            text-align: center;
-        }
-        .disclaimer {
-            max-width: 1000px;
-            margin: 0 auto 40px;
-            padding: 30px;
-            border: 1px solid #444;
-            border-radius: 8px;
-            line-height: 1.8;
-        }
-        @media (max-width: 768px) {
-            .header-top { flex-direction: column; gap: 15px; text-align: center; }
-            .search-wrapper { flex-direction: column; margin: 0 20px; }
-            .btn-search { padding: 20px; }
-            .hero h1 { font-size: 36px; }
-            .hero p { font-size: 18px; }
-            .issues-title { font-size: 30px; }
+            font-size: 1.5rem;
         }
     </style>
 </head>
-<body>
 
-<header class="header-top">
-    <div>
-        <div class="logo-main">HEBRON EDU</div>
-        <div class="logo-sub">Free Educational Resources for Technology Learning</div>
-    </div>
-    <div class="info-line">Student Help Line: 1-760-274-0601</div>
-</header>
+<body class="bg-slate-50 text-slate-900">
 
-<section class="hero">
-    <h1>Hebron Educational Learning Hub</h1>
-    <p>Free access to educational guides, tutorials, and learning materials on common printer and device configuration topics.</p>
-    <div class="search-wrapper" id="searchBar">
-        <input type="text" id="modelNumber" placeholder="Enter Device Model (e.g., LaserJet Pro M404)">
-        <button class="btn-search" onclick="showGuides()">Search Learning Guides</button>
-    </div>
-</section>
-
-<!-- New Section: Common Issues & Educational Tips -->
-<section class="issues-section">
-    <h2 class="issues-title">Common Learning Topics & Educational Tips</h2>
-    <div class="issues-grid">
-        <div class="issue-card">
-            <h3>Printer Shows "Offline"</h3>
-            <ul>
-                <li>Check that the printer is powered on and connected to the same Wi-Fi network as your computer.</li>
-                <li>Restart both the printer and your router to refresh the network connection.</li>
-                <li>In printer settings, set the device as "default printer" and clear any paused print jobs.</li>
-                <li>Learning tip: Understand how network signals work and why devices sometimes lose connection temporarily.</li>
-            </ul>
-        </div>
-        <div class="issue-card">
-            <h3>Wi-Fi Connection Problems</h3>
-            <ul>
-                <li>Ensure the Wi-Fi password entered on the printer is correct (case-sensitive).</li>
-                <li>Move the printer closer to the router to improve signal strength.</li>
-                <li>Use the printer's control panel to re-join the network or run the wireless setup wizard.</li>
-                <li>Educational note: Study basic wireless standards (2.4GHz vs 5GHz) and channel interference.</li>
-            </ul>
-        </div>
-        <div class="issue-card">
-            <h3>Driver or Software Issues</h3>
-            <ul>
-                <li>Visit the official manufacturer website to download the latest educational driver guides.</li>
-                <li>Uninstall old drivers before installing new ones to avoid conflicts.</li>
-                <li>Run compatibility checks for your operating system version.</li>
-                <li>Learning resource: Understand the role of drivers in communicating between hardware and software.</li>
-            </ul>
-        </div>
-        <div class="issue-card">
-            <h3>Printer Not Printing</h3>
-            <ul>
-                <li>Check ink/toner levels and paper tray for jams or low paper.</li>
-                <li>Cancel all pending print jobs from the queue and try a test page.</li>
-                <li>Update firmware through the manufacturer's learning portal if available.</li>
-                <li>Educational tip: Explore how print queues work and basic troubleshooting logic.</li>
-            </ul>
-        </div>
-    </div>
-</section>
-
-<div class="result-module" id="resultModule">
-    <div class="module-title">Educational Learning Guides for <span id="targetModel">Device</span></div>
-    <div class="guide-list">
-        <div class="guide-item">
-            <div class="guide-num">1</div>
-            <div class="guide-content">
-                <h3>Basic Device Setup Tutorial</h3>
-                <p>Step-by-step educational guide covering unboxing, power connection, and initial configuration for beginners.</p>
-                <a href="#" class="download-link">View Guide →</a>
+    <!-- NAVIGATION -->
+    <nav class="glass-nav sticky top-0 z-50 border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex items-center gap-3">
+                    <div class="bg-blue-600 text-white p-3 rounded-xl icon-circle">
+                        <i class="fas fa-print"></i>
+                    </div>
+                    <span class="text-2xl font-bold tracking-tight">Digi<span class="text-blue-600">Tech</span></span>
+                </div>
+                <div class="hidden md:flex space-x-10 text-sm font-medium text-slate-700">
+                    <a href="index.html" class="hover:text-blue-600 transition">Home</a>
+                    <a href="privacy.html" class="hover:text-blue-600 transition">Privacy Policy</a>
+                    <a href="terms.html" class="hover:text-blue-600 transition">Terms of Service</a>
+                    <a href="contact.html" class="hover:text-blue-600 transition">Contact Us</a>
+                </div>
+                <div>
+                    <button class="bg-blue-600 text-white px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-blue-700 transition">
+                        Access Guides
+                    </button>
+                </div>
             </div>
         </div>
-        <div class="guide-item">
-            <div class="guide-num">2</div>
-            <div class="guide-content">
-                <h3>Wireless Network Learning Module</h3>
-                <p>Comprehensive tutorial on understanding Wi-Fi networks and educational steps for device connectivity.</p>
-                <a href="#" class="download-link">View Guide →</a>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero-pattern py-20 md:py-28 border-b border-slate-200">
+        <div class="max-w-5xl mx-auto text-center px-4">
+            <span class="inline-block px-5 py-2 mb-8 text-xs font-bold uppercase tracking-widest bg-blue-100 text-blue-700 rounded-full">
+                Printer Education Platform
+            </span>
+            <h1 class="text-4xl md:text-6xl font-extrabold mb-8 leading-tight">
+                Learn Printer Technology<br>
+                <span class="bg-gradient-to-r from-blue-600 to-indigo-600 text-transparent bg-clip-text">
+                    Troubleshooting & Fix Logic
+                </span>
+            </h1>
+            <p class="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+                DigiTech explains how printers work, why errors occur, and provides clear, step-by-step educational guidance on resolving common printer issues using standard technical principles.
+            </p>
+        </div>
+    </section>
+
+    <!-- MAIN CONTENT -->
+    <main class="max-w-7xl mx-auto px-4 py-20">
+
+        <!-- EDUCATIONAL INTRODUCTION -->
+        <section class="max-w-4xl mx-auto mb-24 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Understanding Printer Problems</h2>
+            <p class="text-lg text-slate-600 leading-relaxed">
+                Printers depend on multiple layers: power systems, firmware, drivers, network protocols, and operating system services. 
+                When any layer fails, common symptoms appear such as <strong>offline status</strong>, <strong>no response</strong>, or <strong>failed print jobs</strong>.
+            </p>
+        </section>
+
+        <!-- COMMON ISSUES -->
+        <section class="mb-24">
+            <h2 class="text-3xl font-bold text-center mb-12">Common Printer Issues Explained</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm text-center">
+                    <div class="bg-red-100 text-red-600 icon-circle mx-auto mb-6">
+                        <i class="fas fa-ban"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Printer Offline</h3>
+                    <p class="text-slate-600 leading-relaxed">
+                        Occurs when the operating system cannot establish communication with the printer due to network disconnection, driver issues, or spooler service failure.
+                    </p>
+                </div>
+
+                <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm text-center">
+                    <div class="bg-blue-100 text-blue-600 icon-circle mx-auto mb-6">
+                        <i class="fas fa-wifi-slash"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Wi-Fi Connection Failure</h3>
+                    <p class="text-slate-600 leading-relaxed">
+                        The printer connects to a different network, loses its IP address, or experiences signal interference preventing device discovery.
+                    </p>
+                </div>
+
+                <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm text-center">
+                    <div class="bg-yellow-100 text-yellow-600 icon-circle mx-auto mb-6">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Stuck Print Queue</h3>
+                    <p class="text-slate-600 leading-relaxed">
+                        Corrupted or incomplete print jobs remain in the spooler, blocking all new print requests from being processed.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- STEP-BY-STEP FIX GUIDE -->
+        <section class="max-w-5xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">
+                Step-by-Step: How to Fix Printer Offline & Connectivity Issues
+            </h2>
+
+            <div class="space-y-8">
+
+                <!-- Step 1 -->
+                <div class="step-card bg-white p-8 rounded-3xl border border-slate-200 flex gap-8 items-start">
+                    <div class="bg-blue-600 text-white w-12 h-12 rounded-full flex-shrink-0 flex items-center justify-center text-xl font-bold">1</div>
+                    <div>
+                        <h4 class="text-xl font-bold mb-3">Power Reset (Cold Boot)</h4>
+                        <p class="text-slate-600 leading-relaxed">
+                            Turn off the printer, unplug it from power, and disconnect USB/Ethernet cables. Wait 60 seconds, then reconnect and power on. This clears volatile memory and resets internal firmware state, resolving transient glitches.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="step-card bg-white p-8 rounded-3xl border border-slate-200 flex gap-8 items-start">
+                    <div class="bg-blue-600 text-white w-12 h-12 rounded-full flex-shrink-0 flex items-center justify-center text-xl font-bold">2</div>
+                    <div>
+                        <h4 class="text-xl font-bold mb-3">Cable & Port Inspection</h4>
+                        <p class="text-slate-600 leading-relaxed">
+                            For USB printers: try a different cable or USB port. For wired: check Ethernet cable integrity. Damaged or loose connections interrupt high-speed data transfer.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="step-card bg-white p-8 rounded-3xl border border-slate-200 flex gap-8 items-start">
+                    <div class="bg-blue-600 text-white w-12 h-12 rounded-full flex-shrink-0 flex items-center justify-center text-xl font-bold">3</div>
+                    <div>
+                        <h4 class="text-xl font-bold mb-3">Network Verification</h4>
+                        <p class="text-slate-600 leading-relaxed">
+                            Ensure printer and computer are on the same Wi-Fi network (same SSID). Print a network configuration page from the printer’s control panel to confirm.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="step-card bg-white p-8 rounded-3xl border border-slate-200 flex gap-8 items-start">
+                    <div class="bg-blue-600 text-white w-12 h-12 rounded-full flex-shrink-0 flex items-center justify-center text-xl font-bold">4</div>
+                    <div>
+                        <h4 class="text-xl font-bold mb-3">IP Address & DHCP Logic</h4>
+                        <p class="text-slate-600 leading-relaxed">
+                            Dynamic IP changes can break established connections. Restart the router or assign a reserved IP in router settings for consistent addressing.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Step 5 -->
+                <div class="step-card bg-white p-8 rounded-3xl border border-slate-200 flex gap-8 items-start">
+                    <div class="bg-blue-600 text-white w-12 h-12 rounded-full flex-shrink-0 flex items-center justify-center text-xl font-bold">5</div>
+                    <div>
+                        <h4 class="text-xl font-bold mb-3">Set as Default Printer</h4>
+                        <p class="text-slate-600 leading-relaxed">
+                            Windows: Settings → Devices → Printers & scanners → Select printer → Manage → Set as default.<br>
+                            Mac: System Settings → Printers & Scanners → Select printer in list → Set as default.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Step 6 -->
+                <div class="step-card bg-white p-8 rounded-3xl border border-slate-200 flex gap-8 items-start">
+                    <div class="bg-blue-600 text-white w-12 h-12 rounded-full flex-shrink-0 flex items-center justify-center text-xl font-bold">6</div>
+                    <div>
+                        <h4 class="text-xl font-bold mb-3">Disable "Use Printer Offline" Mode</h4>
+                        <p class="text-slate-600 leading-relaxed">
+                            Windows: Right-click printer → See what’s printing → Printer menu → Uncheck “Use Printer Offline” if active.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Step 7 -->
+                <div class="step-card bg-white p-8 rounded-3xl border border-slate-200 flex gap-8 items-start">
+                    <div class="bg-blue-600 text-white w-12 h-12 rounded-full flex-shrink-0 flex items-center justify-center text-xl font-bold">7</div>
+                    <div>
+                        <h4 class="text-xl font-bold mb-3">Clear Print Queue</h4>
+                        <p class="text-slate-600 leading-relaxed">
+                            Open print queue → Cancel or delete all pending jobs. This removes corrupted spool files blocking new print data.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Step 8 -->
+                <div class="step-card bg-white p-8 rounded-3xl border border-slate-200 flex gap-8 items-start">
+                    <div class="bg-blue-600 text-white w-12 h-12 rounded-full flex-shrink-0 flex items-center justify-center text-xl font-bold">8</div>
+                    <div>
+                        <h4 class="text-xl font-bold mb-3">Restart Print Spooler Service</h4>
+                        <p class="text-slate-600 leading-relaxed">
+                            Windows: Press Win+R → type services.msc → Find “Print Spooler” → Right-click → Restart.<br>
+                            Mac: Reset printing system (removes all printers; re-add afterward).
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Step 9 -->
+                <div class="step-card bg-white p-8 rounded-3xl border border-slate-200 flex gap-8 items-start">
+                    <div class="bg-blue-600 text-white w-12 h-12 rounded-full flex-shrink-0 flex items-center justify-center text-xl font-bold">9</div>
+                    <div>
+                        <h4 class="text-xl font-bold mb-3">Reinstall or Update Drivers</h4>
+                        <p class="text-slate-600 leading-relaxed">
+                            Download the latest drivers from the official manufacturer website (HP, Epson, Canon, etc.) for your exact printer model and OS version.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Step 10 -->
+                <div class="step-card bg-white p-8 rounded-3xl border border-slate-200 flex gap-8 items-start">
+                    <div class="bg-blue-600 text-white w-12 h-12 rounded-full flex-shrink-0 flex items-center justify-center text-xl font-bold">10</div>
+                    <div>
+                        <h4 class="text-xl font-bold mb-3">Check Firewall & Port Rules</h4>
+                        <p class="text-slate-600 leading-relaxed">
+                            Ensure printer communication ports (9100, 515, 631) are allowed in Windows Defender Firewall or third-party security software.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Step 11 -->
+                <div class="step-card bg-white p-8 rounded-3xl border border-slate-200 flex gap-8 items-start">
+                    <div class="bg-blue-600 text-white w-12 h-12 rounded-full flex-shrink-0 flex items-center justify-center text-xl font-bold">11</div>
+                    <div>
+                        <h4 class="text-xl font-bold mb-3">Update Printer Firmware</h4>
+                        <p class="text-slate-600 leading-relaxed">
+                            Visit the manufacturer’s support site, download the latest firmware for your model, and apply it via USB or network update utility.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Step 12 -->
+                <div class="step-card bg-white p-8 rounded-3xl border border-slate-200 flex gap-8 items-start">
+                    <div class="bg-blue-600 text-white w-12 h-12 rounded-full flex-shrink-0 flex items-center justify-center text-xl font-bold">12</div>
+                    <div>
+                        <h4 class="text-xl font-bold mb-3">Print Test Page for Validation</h4>
+                        <p class="text-slate-600 leading-relaxed">
+                            From printer settings or control panel, print a test page. Success confirms full communication restoration between OS and hardware.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="mt-12 text-center">
+                <p class="text-sm italic text-slate-500">
+                    All guidance is based on standard manufacturer-recommended procedures and is for educational purposes only.
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-900 text-slate-300 pt-16 pb-10">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <div class="flex items-center justify-center gap-3 mb-6">
+                <div class="bg-blue-600 text-white p-3 rounded-xl icon-circle">
+                    <i class="fas fa-print"></i>
+                </div>
+                <span class="text-2xl font-bold">DigiTech</span>
+            </div>
+            <p class="text-sm max-w-2xl mx-auto mb-8">
+                © 2026 DigiTech Educational Platform. Independent open-access learning resource dedicated to printer technology and troubleshooting education.<br>
+                No commercial repair services or brand-specific support provided.
+            </p>
+            <div class="flex justify-center gap-8 text-sm">
+                <a href="privacy.html" class="hover:text-white transition">Privacy Policy</a>
+                <a href="terms.html" class="hover:text-white transition">Terms of Service</a>
+                <a href="contact.html" class="hover:text-white transition">Contact Us</a>
             </div>
         </div>
-        <div class="guide-item">
-            <div class="guide-num">3</div>
-            <div class="guide-content">
-                <h3>Driver & Software Education</h3>
-                <p>Learn where to find official manufacturer resources and understand software installation concepts.</p>
-                <a href="#" class="download-link">View Guide →</a>
-            </div>
-        </div>
-        <div class="guide-item">
-            <div class="guide-num">4</div>
-            <div class="guide-content">
-                <h3>Troubleshooting Basics</h3>
-                <p>Educational overview of common issues and safe learning approaches to basic problem identification.</p>
-                <a href="#" class="download-link">View Guide →</a>
-            </div>
-        </div>
-    </div>
-</div>
-
-<section class="category-grid">
-    <div class="card">
-        <img src="https://res.cloudinary.com/dadqwaqis/image/upload/v1766669065/IMG_1_lxkwx6.webp" alt="Laser Printer Learning">
-        <h3>Laser Device Education</h3>
-        <p>Free tutorials on understanding laser printing technology and basic configuration concepts.</p>
-        <button class="view-btn" onclick="window.scrollTo(0, 0)">Explore Guides</button>
-    </div>
-    <div class="card">
-        <img src="https://res.cloudinary.com/dadqwaqis/image/upload/v1766669064/IMG2_oulwpf.webp" alt="Inkjet Learning">
-        <h3>Inkjet Technology Module</h3>
-        <p>Educational resources explaining inkjet systems and wireless learning materials.</p>
-        <button class="view-btn" onclick="window.scrollTo(0, 0)">Explore Guides</button>
-    </div>
-    <div class="card">
-        <img src="https://res.cloudinary.com/dadqwaqis/image/upload/v1766669064/IMG3_u5lcyn.webp" alt="Network Learning">
-        <h3>Network Configuration Studies</h3>
-        <p>Advanced educational content on network protocols and device integration learning.</p>
-        <button class="view-btn" onclick="window.scrollTo(0, 0)">Explore Guides</button>
-    </div>
-</section>
-
-<footer>
-    <div class="disclaimer">
-        <strong>EDUCATIONAL DISCLAIMER:</strong><br>
-        Hebron Educational Services is a completely <strong>free, non-commercial educational platform</strong> dedicated to providing learning resources about technology configuration and device setup.<br><br>
-        All materials are created for <strong>educational and informational purposes only</strong>. No fees are ever charged for access to guides, tutorials, or learning content.<br><br>
-        We are <strong>not affiliated with, endorsed by, or sponsored by</strong> any device manufacturer including HP, Canon, Epson, Brother, or any other brand. All trademarks and brand names are property of their respective owners and used solely for educational reference and compatibility description.<br><br>
-        The student help line is provided as a free community resource for learners needing clarification on educational materials only.
-    </div>
-    <div style="margin-top:40px; opacity:0.7;">
-        © 2025 Hebron Educational Services | Free Learning Repository | All Rights Reserved
-    </div>
-</footer>
-
-<script>
-function showGuides() {
-    const model = document.getElementById("modelNumber").value.trim();
-    if (model.length < 2) {
-        alert("Please enter a device model to search for learning guides.");
-        return;
-    }
-    
-    document.getElementById("targetModel").innerText = model.toUpperCase();
-    document.getElementById("searchBar").style.display = "none";
-    document.getElementById("resultModule").style.display = "block";
-    
-    // Smooth scroll to results
-    document.getElementById("resultModule").scrollIntoView({ behavior: "smooth", block: "start" });
-}
-</script>
+    </footer>
 
 </body>
 </html>
