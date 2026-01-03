@@ -3,308 +3,481 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DigiTech | Printer Technology & Troubleshooting Education</title>
-
+    <title>How to Fix Printer Offline Issues - DigiTech Professional Guide</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Inter', sans-serif; }
-        .hero-pattern {
-            background-color: #f8fafc;
-            background-image: radial-gradient(#cbd5e1 0.5px, transparent 0.5px);
-            background-size: 24px 24px;
-        }
-        .step-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-            transition: all 0.3s ease;
-        }
-        .glass-nav {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(12px);
-        }
-        .icon-circle {
-            width: 48px;
-            height: 48px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 12px;
-            font-size: 1.5rem;
-        }
+        body { font-family: 'Inter', sans-serif; line-height: 1.7; }
+        .article-title { font-family: 'Libre Baskerville', serif; }
+        .step-illustration { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 280px; display: flex; align-items: center; justify-content: center; border-radius: 12px; position: relative; overflow: hidden; }
+        .step-illustration::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 30% 50%, rgba(255,255,255,0.1) 0%, transparent 60%); }
+        .step-number { position: absolute; top: 16px; left: 16px; background: rgba(255,255,255,0.95); width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.25rem; box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
+        .method-section { scroll-margin-top: 100px; }
+        .warning-box { border-left: 4px solid #f59e0b; background: #fffbeb; }
+        .tip-box { border-left: 4px solid #10b981; background: #f0fdf4; }
+        .nav-sticky { position: sticky; top: 80px; max-height: calc(100vh - 100px); overflow-y: auto; }
+        .icon-graphic { font-size: 6rem; color: rgba(255,255,255,0.9); text-shadow: 0 4px 20px rgba(0,0,0,0.2); }
+        .gradient-1 { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        .gradient-2 { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); }
+        .gradient-3 { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); }
+        .gradient-4 { background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); }
+        .gradient-5 { background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); }
+        .gradient-6 { background: linear-gradient(135deg, #30cfd0 0%, #330867 100%); }
+        .sub-step { position: relative; padding-left: 2rem; }
+        .sub-step::before { content: ''; position: absolute; left: 0; top: 0.6rem; width: 8px; height: 8px; background: #3b82f6; border-radius: 50%; }
     </style>
-    <script>(function(w,d,t,r,u){var f,n,i;w[u]=w[u]||[],f=function(){var o={ti:"187228082", enableAutoSpaTracking: true};o.q=w[u],w[u]=new UET(o),w[u].push("pageLoad")},n=d.createElement(t),n.src=r,n.async=1,n.onload=n.onreadystatechange=function(){var s=this.readyState;s&&s!=="loaded"&&s!=="complete"||(f(),n.onload=n.onreadystatechange=null)},i=d.getElementsByTagName(t)[0],i.parentNode.insertBefore(n,i)})(window,document,"script","//bat.bing.com/bat.js","uetq");</script>
 </head>
-
-<body class="bg-slate-50 text-slate-900">
-
-    <!-- NAVIGATION -->
-    <nav class="glass-nav sticky top-0 z-50 border-b border-slate-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16 items-center">
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white border-b sticky top-0 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
                 <div class="flex items-center gap-3">
-                    <div class="bg-blue-600 text-white p-3 rounded-xl icon-circle">
-                        <i class="fas fa-print"></i>
+                    <div class="bg-blue-600 text-white p-2 rounded-lg">
+                        <i class="fas fa-book text-xl"></i>
                     </div>
-                    <span class="text-2xl font-bold tracking-tight">Digi<span class="text-blue-600">Tech</span></span>
+                    <div>
+                        <h1 class="text-xl font-bold">DigiTech</h1>
+                        <p class="text-xs text-gray-500">Professional Education Guide</p>
+                    </div>
                 </div>
-                <div class="hidden md:flex space-x-10 text-sm font-medium text-slate-700">
-                    <a href="index.html" class="hover:text-blue-600 transition">Home</a>
-                    <a href="privacy.html" class="hover:text-blue-600 transition">Privacy Policy</a>
-                    <a href="terms.html" class="hover:text-blue-600 transition">Terms of Service</a>
-                    <a href="contact.html" class="hover:text-blue-600 transition">Contact Us</a>
-                </div>
-                <div>
-                    <button class="bg-blue-600 text-white px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-blue-700 transition">
-                        Access Guides
-                    </button>
+                <div class="hidden md:flex gap-6 text-sm">
+                    <a href="index.html" class="text-gray-600 hover:text-blue-600">Home</a>
+                    <a href="privacy.html" class="text-gray-600 hover:text-blue-600">Privacy Policy</a>
+                    <a href="terms.html" class="text-gray-600 hover:text-blue-600">Terms of Service</a>
+                    <a href="contact.html" class="text-gray-600 hover:text-blue-600">Contact</a>
                 </div>
             </div>
         </div>
-    </nav>
+    </header>
 
-    <!-- HERO -->
-    <section class="hero-pattern py-20 md:py-28 border-b border-slate-200">
-        <div class="max-w-5xl mx-auto text-center px-4">
-            <span class="inline-block px-5 py-2 mb-8 text-xs font-bold uppercase tracking-widest bg-blue-100 text-blue-700 rounded-full">
-                Printer Education Platform
-            </span>
-            <h1 class="text-4xl md:text-6xl font-extrabold mb-8 leading-tight">
-                Learn Printer Technology<br>
-                <span class="bg-gradient-to-r from-blue-600 to-indigo-600 text-transparent bg-clip-text">
-                    Troubleshooting & Fix Logic
-                </span>
+    <!-- Article Header -->
+    <div class="bg-white border-b">
+        <div class="max-w-4xl mx-auto px-4 py-12">
+            <div class="flex items-center gap-2 text-sm text-gray-500 mb-4">
+                <a href="#" class="hover:text-blue-600">Technology</a>
+                <i class="fas fa-chevron-right text-xs"></i>
+                <a href="#" class="hover:text-blue-600">Computer Hardware</a>
+                <i class="fas fa-chevron-right text-xs"></i>
+                <span>Printers</span>
+            </div>
+            <h1 class="article-title text-4xl md:text-5xl font-bold mb-6 leading-tight">
+                How to Fix a Printer That Won't Print or Shows Offline
             </h1>
-            <p class="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
-                DigiTech explains how printers work, why errors occur, and provides clear, step-by-step educational guidance on resolving common printer issues using standard technical principles.
-            </p>
+            <div class="flex items-center gap-6 text-sm text-gray-600 mb-6">
+                <div class="flex items-center gap-2">
+                    <i class="fas fa-user-circle text-lg"></i>
+                    <span>Written by DigiTech Technical Team</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <i class="fas fa-calendar"></i>
+                    <span>Updated: January 2026</span>
+                </div>
+            </div>
+            <div class="bg-blue-50 border border-blue-200 rounded-lg p-6">
+                <div class="flex gap-4">
+                    <i class="fas fa-info-circle text-blue-600 text-2xl"></i>
+                    <div>
+                        <h3 class="font-bold text-lg mb-2">Article Summary</h3>
+                        <p class="text-gray-700">This comprehensive guide explains how to diagnose and fix common printer connectivity issues, including offline status, failed print jobs, and network problems. Follow the step-by-step methods to restore your printer functionality using manufacturer-recommended procedures.</p>
+                    </div>
+                </div>
+            </div>
         </div>
-    </section>
+    </div>
 
-    <!-- MAIN CONTENT -->
-    <main class="max-w-7xl mx-auto px-4 py-20">
-
-        <!-- EDUCATIONAL INTRODUCTION -->
-        <section class="max-w-4xl mx-auto mb-24 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold mb-6">Understanding Printer Problems</h2>
-            <p class="text-lg text-slate-600 leading-relaxed">
-                Printers depend on multiple layers: power systems, firmware, drivers, network protocols, and operating system services. 
-                When any layer fails, common symptoms appear such as <strong>offline status</strong>, <strong>no response</strong>, or <strong>failed print jobs</strong>.
-            </p>
-        </section>
-
-        <!-- COMMON ISSUES -->
-        <section class="mb-24">
-            <h2 class="text-3xl font-bold text-center mb-12">Common Printer Issues Explained</h2>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm text-center">
-                    <div class="bg-red-100 text-red-600 icon-circle mx-auto mb-6">
-                        <i class="fas fa-ban"></i>
+    <!-- Main Content -->
+    <div class="max-w-7xl mx-auto px-4 py-12">
+        <div class="flex gap-8">
+            <!-- Sidebar Navigation -->
+            <aside class="hidden lg:block w-64 flex-shrink-0">
+                <nav class="nav-sticky bg-white rounded-lg border p-6">
+                    <h3 class="font-bold mb-4 text-sm uppercase tracking-wide text-gray-500">Contents</h3>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="#understanding" class="text-gray-700 hover:text-blue-600 block">Understanding Printer Issues</a></li>
+                        <li><a href="#method1" class="text-gray-700 hover:text-blue-600 block">Method 1: Basic Troubleshooting</a></li>
+                        <li><a href="#method2" class="text-gray-700 hover:text-blue-600 block">Method 2: Driver & Software Fixes</a></li>
+                        <li><a href="#method3" class="text-gray-700 hover:text-blue-600 block">Method 3: Network Connectivity</a></li>
+                        <li><a href="#method4" class="text-gray-700 hover:text-blue-600 block">Method 4: Advanced Diagnostics</a></li>
+                        <li><a href="#tips" class="text-gray-700 hover:text-blue-600 block">Expert Tips</a></li>
+                        <li><a href="#faq" class="text-gray-700 hover:text-blue-600 block">FAQ</a></li>
+                    </ul>
+                    <div class="mt-8 pt-6 border-t">
+                        <h4 class="font-bold text-xs uppercase tracking-wide text-gray-500 mb-3">Official Resources</h4>
+                        <ul class="space-y-2 text-xs">
+                            <li><a href="https://support.hp.com" target="_blank" class="text-blue-600 hover:underline flex items-center gap-1"><i class="fas fa-external-link-alt"></i> HP Support</a></li>
+                            <li><a href="https://www.canon.com/support" target="_blank" class="text-blue-600 hover:underline flex items-center gap-1"><i class="fas fa-external-link-alt"></i> Canon Support</a></li>
+                            <li><a href="https://support.brother.com" target="_blank" class="text-blue-600 hover:underline flex items-center gap-1"><i class="fas fa-external-link-alt"></i> Brother Support</a></li>
+                            <li><a href="https://epson.com/Support" target="_blank" class="text-blue-600 hover:underline flex items-center gap-1"><i class="fas fa-external-link-alt"></i> Epson Support</a></li>
+                            <li><a href="https://support.apple.com" target="_blank" class="text-blue-600 hover:underline flex items-center gap-1"><i class="fas fa-external-link-alt"></i> Apple Support</a></li>
+                            <li><a href="https://support.microsoft.com" target="_blank" class="text-blue-600 hover:underline flex items-center gap-1"><i class="fas fa-external-link-alt"></i> Microsoft Support</a></li>
+                        </ul>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Printer Offline</h3>
-                    <p class="text-slate-600 leading-relaxed">
-                        Occurs when the operating system cannot establish communication with the printer due to network disconnection, driver issues, or spooler service failure.
-                    </p>
-                </div>
+                </nav>
+            </aside>
 
-                <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm text-center">
-                    <div class="bg-blue-100 text-blue-600 icon-circle mx-auto mb-6">
-                        <i class="fas fa-wifi-slash"></i>
+            <!-- Main Article -->
+            <main class="flex-1 max-w-4xl">
+                <!-- Understanding Section -->
+                <section id="understanding" class="method-section bg-white rounded-lg border p-8 mb-8">
+                    <h2 class="text-3xl font-bold mb-6">Understanding Why Printers Go Offline</h2>
+                    <p class="mb-4">Modern printers are complex devices that rely on multiple interconnected systems to function properly. Understanding the communication chain helps identify where problems occur.</p>
+                    <div class="bg-gray-50 rounded-lg p-6 mb-6">
+                        <h3 class="font-bold text-lg mb-3">The Printer Communication Chain</h3>
+                        <div class="flex flex-wrap items-center gap-3 text-sm">
+                            <span class="bg-white px-4 py-2 rounded-full border font-medium">Computer Application</span>
+                            <i class="fas fa-arrow-right text-gray-400"></i>
+                            <span class="bg-white px-4 py-2 rounded-full border font-medium">Print Driver</span>
+                            <i class="fas fa-arrow-right text-gray-400"></i>
+                            <span class="bg-white px-4 py-2 rounded-full border font-medium">Print Spooler</span>
+                            <i class="fas fa-arrow-right text-gray-400"></i>
+                            <span class="bg-white px-4 py-2 rounded-full border font-medium">Network/USB</span>
+                            <i class="fas fa-arrow-right text-gray-400"></i>
+                            <span class="bg-white px-4 py-2 rounded-full border font-medium">Printer Firmware</span>
+                            <i class="fas fa-arrow-right text-gray-400"></i>
+                            <span class="bg-white px-4 py-2 rounded-full border font-medium">Print Engine</span>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Wi-Fi Connection Failure</h3>
-                    <p class="text-slate-600 leading-relaxed">
-                        The printer connects to a different network, loses its IP address, or experiences signal interference preventing device discovery.
-                    </p>
-                </div>
-
-                <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm text-center">
-                    <div class="bg-yellow-100 text-yellow-600 icon-circle mx-auto mb-6">
-                        <i class="fas fa-exclamation-triangle"></i>
+                    <h3 class="font-bold text-xl mb-4 mt-6">Common Causes of Printer Problems</h3>
+                    <div class="grid md:grid-cols-2 gap-4 mb-6">
+                        <div class="border rounded-lg p-4">
+                            <div class="flex items-start gap-3">
+                                <i class="fas fa-network-wired text-red-500 text-xl mt-1"></i>
+                                <div>
+                                    <h4 class="font-bold mb-1">Network Disconnection</h4>
+                                    <p class="text-sm text-gray-600">The printer loses its Wi-Fi connection or IP address changes, preventing the computer from locating it.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="border rounded-lg p-4">
+                            <div class="flex items-start gap-3">
+                                <i class="fas fa-code text-orange-500 text-xl mt-1"></i>
+                                <div>
+                                    <h4 class="font-bold mb-1">Driver Corruption</h4>
+                                    <p class="text-sm text-gray-600">Outdated or damaged drivers fail to translate print commands into printer-readable language (PCL/PostScript).</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="border rounded-lg p-4">
+                            <div class="flex items-start gap-3">
+                                <i class="fas fa-list text-yellow-500 text-xl mt-1"></i>
+                                <div>
+                                    <h4 class="font-bold mb-1">Stuck Print Queue</h4>
+                                    <p class="text-sm text-gray-600">Corrupted print jobs remain in the spooler, blocking all subsequent print requests.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="border rounded-lg p-4">
+                            <div class="flex items-start gap-3">
+                                <i class="fas fa-shield-alt text-blue-500 text-xl mt-1"></i>
+                                <div>
+                                    <h4 class="font-bold mb-1">Firewall Blocking</h4>
+                                    <p class="text-sm text-gray-600">Security software blocks essential printer ports (9100, 515, 631) needed for communication.</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Stuck Print Queue</h3>
-                    <p class="text-slate-600 leading-relaxed">
-                        Corrupted or incomplete print jobs remain in the spooler, blocking all new print requests from being processed.
-                    </p>
-                </div>
-            </div>
-        </section>
+                </section>
 
-        <!-- STEP-BY-STEP FIX GUIDE -->
-        <section class="max-w-5xl mx-auto">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">
-                Step-by-Step: How to Fix Printer Offline & Connectivity Issues
-            </h2>
+                <!-- Method 1: Basic Troubleshooting -->
+                <section id="method1" class="method-section mb-8">
+                    <div class="bg-white rounded-lg border overflow-hidden">
+                        <div class="bg-gradient-to-r from-blue-600 to-indigo-600 text-white p-6">
+                            <h2 class="text-3xl font-bold">Method 1: Basic Troubleshooting Steps</h2>
+                            <p class="mt-2 opacity-90">Start with these fundamental checks that resolve 60% of printer issues</p>
+                        </div>
+                        <div class="p-8">
+                            <!-- Step 1 -->
+                            <div class="mb-12">
+                                <div class="step-illustration gradient-1 mb-6 relative">
+                                    <div class="step-number">1</div>
+                                    <i class="fas fa-power-off icon-graphic"></i>
+                                </div>
+                                <h3 class="text-2xl font-bold mb-4">Perform a Complete Power Reset (Cold Boot)</h3>
+                                <p class="mb-4 text-gray-700">A power reset clears the printer's temporary memory and resets internal electronic states. This simple procedure resolves many transient issues.</p>
+                                <div class="bg-blue-50 rounded-lg p-6 mb-4">
+                                    <h4 class="font-bold mb-3 flex items-center gap-2"><i class="fas fa-list-ol text-blue-600"></i> Detailed Steps:</h4>
+                                    <div class="space-y-3">
+                                        <div class="sub-step"><strong>Turn off the printer</strong> using the power button on the device (do not just unplug it while running)</div>
+                                        <div class="sub-step"><strong>Disconnect the power cable</strong> from the back of the printer completely</div>
+                                        <div class="sub-step"><strong>Disconnect all cables:</strong> USB cable, Ethernet cable, or any other connections</div>
+                                        <div class="sub-step"><strong>Wait 60-120 seconds</strong> to allow capacitors to fully discharge and memory to clear</div>
+                                        <div class="sub-step"><strong>Reconnect the power cable</strong> first, ensuring it's firmly seated</div>
+                                        <div class="sub-step"><strong>Reconnect data cables</strong> (USB or Ethernet) if applicable</div>
+                                        <div class="sub-step"><strong>Power on the printer</strong> and wait for it to complete its initialization sequence (typically 30-90 seconds)</div>
+                                    </div>
+                                </div>
+                                <div class="tip-box rounded-lg p-4 mb-4">
+                                    <div class="flex gap-3">
+                                        <i class="fas fa-lightbulb text-green-600 text-xl"></i>
+                                        <div>
+                                            <strong class="block mb-1">Expert Tip:</strong>
+                                            <span class="text-gray-700">The waiting period is critical—it ensures volatile memory fully clears. Skipping this step reduces effectiveness significantly.</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <img src="https://ij.manual.canon/ij/webmanual/Manual/All/TR150%20series/EN/NTR/screens/ntr_t_ap_01.jpg" alt="Illustration of unplugging printer power cable for reset" class="rounded-lg shadow-md mx-auto block max-w-lg">
+                            </div>
 
-            <div class="space-y-8">
+                            <!-- Step 2 -->
+                            <div class="mb-12">
+                                <div class="step-illustration gradient-2 mb-6 relative">
+                                    <div class="step-number">2</div>
+                                    <i class="fas fa-plug icon-graphic"></i>
+                                </div>
+                                <h3 class="text-2xl font-bold mb-4">Inspect All Cables and Physical Connections</h3>
+                                <p class="mb-4 text-gray-700">Physical connection problems are among the most common yet overlooked causes of printer failures. A systematic inspection reveals hidden issues.</p>
+                                <div class="grid md:grid-cols-2 gap-4 mb-4">
+                                    <div class="border rounded-lg p-4">
+                                        <h4 class="font-bold mb-3 text-blue-600">USB Connections:</h4>
+                                        <ul class="space-y-2 text-sm text-gray-700">
+                                            <li class="flex gap-2"><i class="fas fa-check text-green-500 mt-1"></i><span>Try a different USB cable (cables degrade over time)</span></li>
+                                            <li class="flex gap-2"><i class="fas fa-check text-green-500 mt-1"></i><span>Use a rear motherboard USB port (front ports can have power issues)</span></li>
+                                            <li class="flex gap-2"><i class="fas fa-check text-green-500 mt-1"></i><span>Avoid USB hubs—connect directly to the computer</span></li>
+                                            <li class="flex gap-2"><i class="fas fa-check text-green-500 mt-1"></i><span>Ensure the cable is USB 2.0 certified or higher</span></li>
+                                        </ul>
+                                    </div>
+                                    <div class="border rounded-lg p-4">
+                                        <h4 class="font-bold mb-3 text-blue-600">Ethernet Connections:</h4>
+                                        <ul class="space-y-2 text-sm text-gray-700">
+                                            <li class="flex gap-2"><i class="fas fa-check text-green-500 mt-1"></i><span>Verify both ends of the Ethernet cable are firmly clicked in</span></li>
+                                            <li class="flex gap-2"><i class="fas fa-check text-green-500 mt-1"></i><span>Check for lit LEDs at both connection points</span></li>
+                                            <li class="flex gap-2"><i class="fas fa-check text-green-500 mt-1"></i><span>Try a different Ethernet cable to rule out cable failure</span></li>
+                                            <li class="flex gap-2"><i class="fas fa-check text-green-500 mt-1"></i><span>Test a different port on your router/switch</span></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="warning-box rounded-lg p-4">
+                                    <div class="flex gap-3">
+                                        <i class="fas fa-exclamation-triangle text-orange-500 text-xl"></i>
+                                        <div>
+                                            <strong class="block mb-1">Warning:</strong>
+                                            <span class="text-gray-700">USB 3.0 ports (blue interior) can sometimes cause compatibility issues with older printers. If problems persist, try a USB 2.0 port (black interior).</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
-                <!-- Step 1 -->
-                <div class="step-card bg-white p-8 rounded-3xl border border-slate-200 flex gap-8 items-start">
-                    <div class="bg-blue-600 text-white w-12 h-12 rounded-full flex-shrink-0 flex items-center justify-center text-xl font-bold">1</div>
-                    <div>
-                        <h4 class="text-xl font-bold mb-3">Power Reset (Cold Boot)</h4>
-                        <p class="text-slate-600 leading-relaxed">
-                            Turn off the printer, unplug it from power, and disconnect USB/Ethernet cables. Wait 60 seconds, then reconnect and power on. This clears volatile memory and resets internal firmware state, resolving transient glitches.
-                        </p>
+                            <!-- Step 3 -->
+                            <div class="mb-12">
+                                <div class="step-illustration gradient-3 mb-6 relative">
+                                    <div class="step-number">3</div>
+                                    <i class="fas fa-check-circle icon-graphic"></i>
+                                </div>
+                                <h3 class="text-2xl font-bold mb-4">Verify Printer Status and Clear Offline Mode</h3>
+                                <p class="mb-4 text-gray-700">Windows and macOS can incorrectly mark a printer as offline even when it's functional. Manually clearing this status often restores connectivity.</p>
+                                <img src="https://htse.kapilarya.com/Change-Printer-From-Offline-To-Online-Status-In-Windows-10-1.png" alt="Screenshot of printer offline status in Windows Printers & Scanners settings" class="rounded-lg shadow-md mx-auto block max-w-lg mb-6">
+                                <div class="mb-6">
+                                    <h4 class="font-bold mb-3 bg-gray-100 p-3 rounded">For Windows Users (Windows 11/10):</h4>
+                                    <div class="space-y-3 ml-4">
+                                        <div class="sub-step">Open <strong>Settings</strong> → <strong>Bluetooth & devices</strong> → <strong>Printers & scanners</strong></div>
+                                        <div class="sub-step">Select your printer</div>
+                                        <div class="sub-step">Click <strong>Open queue</strong></div>
+                                        <div class="sub-step">In the menu, click <strong>Printer</strong> → Uncheck <strong>Use Printer Offline</strong> if checked</div>
+                                        <div class="sub-step">Also uncheck <strong>Pause Printing</strong></div>
+                                        <div class="sub-step">Run the Printer Troubleshooter: Settings → System → Troubleshoot → Other troubleshooters → Printer → Run</div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold mb-3 bg-gray-100 p-3 rounded">For macOS Users:</h4>
+                                    <div class="space-y-3 ml-4">
+                                        <div class="sub-step">Open <strong>System Settings</strong> → <strong>Printers & Scanners</strong></div>
+                                        <div class="sub-step">Select your printer</div>
+                                        <div class="sub-step">If status shows "Offline" or "Paused," click <strong>Resume</strong></div>
+                                        <div class="sub-step">Open the print queue and delete any stuck jobs</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
+                </section>
 
-                <!-- Step 2 -->
-                <div class="step-card bg-white p-8 rounded-3xl border border-slate-200 flex gap-8 items-start">
-                    <div class="bg-blue-600 text-white w-12 h-12 rounded-full flex-shrink-0 flex items-center justify-center text-xl font-bold">2</div>
-                    <div>
-                        <h4 class="text-xl font-bold mb-3">Cable & Port Inspection</h4>
-                        <p class="text-slate-600 leading-relaxed">
-                            For USB printers: try a different cable or USB port. For wired: check Ethernet cable integrity. Damaged or loose connections interrupt high-speed data transfer.
-                        </p>
+                <!-- Method 2: Driver & Software Fixes -->
+                <section id="method2" class="method-section mb-8">
+                    <div class="bg-white rounded-lg border overflow-hidden">
+                        <div class="bg-gradient-to-r from-purple-600 to-pink-600 text-white p-6">
+                            <h2 class="text-3xl font-bold">Method 2: Driver and Software Fixes</h2>
+                            <p class="mt-2 opacity-90">Resolve driver corruption, spooler issues, and software conflicts</p>
+                        </div>
+                        <div class="p-8">
+                            <!-- Step 4 -->
+                            <div class="mb-12">
+                                <div class="step-illustration gradient-4 mb-6 relative">
+                                    <div class="step-number">4</div>
+                                    <i class="fas fa-download icon-graphic"></i>
+                                </div>
+                                <h3 class="text-2xl font-bold mb-4">Download and Install Official Printer Drivers</h3>
+                                <p class="mb-4 text-gray-700">Printer drivers act as translators between your computer and printer. Corrupted or outdated drivers are the leading cause of print failures.</p>
+                                <div class="bg-red-50 border-l-4 border-red-500 p-4 mb-6">
+                                    <div class="flex gap-3">
+                                        <i class="fas fa-ban text-red-600 text-2xl"></i>
+                                        <div>
+                                            <strong class="block mb-2 text-lg">Critical Warning: Never Use Third-Party Driver Sites</strong>
+                                            <p class="text-gray-700">Websites offering "universal drivers" or "driver update tools" often bundle malware, adware, or incorrect drivers that can permanently damage your printer configuration. Always download exclusively from manufacturer websites.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h4 class="font-bold text-lg mb-4">Step-by-Step Driver Installation Process:</h4>
+                                <div class="space-y-4 mb-6">
+                                    <div class="border-l-4 border-blue-500 pl-4">
+                                        <strong class="block mb-2">Step 4.1: Identify Your Exact Printer Model</strong>
+                                        <p class="text-gray-700">Find the model number on a label (usually on the front or back). Example: "HP LaserJet Pro M404dn" not just "HP LaserJet"</p>
+                                    </div>
+                                    <div class="border-l-4 border-blue-500 pl-4">
+                                        <strong class="block mb-2">Step 4.2: Visit the Official Manufacturer Support Site</strong>
+                                        <ul class="list-disc ml-6 mt-2 space-y-1 text-gray-700">
+                                            <li><strong>HP:</strong> <a href="https://support.hp.com" target="_blank" class="text-blue-600 underline">support.hp.com</a> → Enter model number</li>
+                                            <li><strong>Canon:</strong> <a href="https://www.canon.com/support" target="_blank" class="text-blue-600 underline">canon.com/support</a> → Search drivers</li>
+                                            <li><strong>Brother:</strong> <a href="https://support.brother.com" target="_blank" class="text-blue-600 underline">support.brother.com</a> → Downloads</li>
+                                            <li><strong>Epson:</strong> <a href="https://epson.com/Support" target="_blank" class="text-blue-600 underline">epson.com/Support</a> → Drivers & Downloads</li>
+                                        </ul>
+                                    </div>
+                                    <div class="border-l-4 border-blue-500 pl-4">
+                                        <strong class="block mb-2">Step 4.3: Select Your Operating System</strong>
+                                        <p class="text-gray-700">Choose the exact version (e.g., "Windows 11 64-bit" or "macOS 14 Sonoma"). Wrong OS selection causes installation failures.</p>
+                                    </div>
+                                    <div class="border-l-4 border-blue-500 pl-4">
+                                        <strong class="block mb-2">Step 4.4: Download the Full Feature Driver Package</strong>
+                                        <p class="text-gray-700">Look for "Full Software Solution" or "Complete Driver Package" rather than "Basic Driver"—full packages include utilities, firmware updaters, and diagnostic tools.</p>
+                                    </div>
+                                    <div class="border-l-4 border-blue-500 pl-4">
+                                        <strong class="block mb-2">Step 4.5: Uninstall Old Drivers First</strong>
+                                        <p class="text-gray-700 mb-2">Windows: Settings → Apps → Search for printer name → Uninstall all related software. Then restart.</p>
+                                        <p class="text-gray-700">macOS: Remove the printer from Printers & Scanners, then use the manufacturer's uninstaller if available.</p>
+                                    </div>
+                                    <div class="border-l-4 border-blue-500 pl-4">
+                                        <strong class="block mb-2">Step 4.6: Run the Installer</strong>
+                                        <p class="text-gray-700">Double-click the downloaded file, follow prompts, and restart your computer when installation completes. Re-add the printer if necessary.</p>
+                                    </div>
+                                </div>
+                                <div class="tip-box rounded-lg p-4">
+                                    <div class="flex gap-3">
+                                        <i class="fas fa-lightbulb text-green-600 text-xl"></i>
+                                        <div>
+                                            <strong class="block mb-1">Pro Tip:</strong>
+                                            <span class="text-gray-700">After reinstalling drivers, run the manufacturer's diagnostic tool (e.g., HP Print and Scan Doctor) for automated fixes.</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Step 5: Clear Queue & Restart Spooler -->
+                            <div class="mb-12">
+                                <div class="step-illustration gradient-5 mb-6 relative">
+                                    <div class="step-number">5</div>
+                                    <i class="fas fa-trash-alt icon-graphic"></i>
+                                </div>
+                                <h3 class="text-2xl font-bold mb-4">Clear Print Queue and Restart Spooler</h3>
+                                <p class="mb-4 text-gray-700">Stuck jobs or spooler errors block communication.</p>
+                                <div class="space-y-6">
+                                    <div>
+                                        <h4 class="font-bold mb-3 bg-gray-100 p-3 rounded">Windows:</h4>
+                                        <div class="space-y-3 ml-4">
+                                            <div class="sub-step">Open print queue → Cancel all documents</div>
+                                            <div class="sub-step">Press Win + R → type <code>services.msc</code> → Find "Print Spooler" → Right-click → Restart</div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold mb-3 bg-gray-100 p-3 rounded">macOS:</h4>
+                                        <div class="space-y-3 ml-4">
+                                            <div class="sub-step">Open print queue → Delete stuck jobs</div>
+                                            <div class="sub-step">For persistent issues: Control-click in Printers list → Reset printing system (re-add printers afterward)</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
+                </section>
 
-                <!-- Step 3 -->
-                <div class="step-card bg-white p-8 rounded-3xl border border-slate-200 flex gap-8 items-start">
-                    <div class="bg-blue-600 text-white w-12 h-12 rounded-full flex-shrink-0 flex items-center justify-center text-xl font-bold">3</div>
-                    <div>
-                        <h4 class="text-xl font-bold mb-3">Network Verification</h4>
-                        <p class="text-slate-600 leading-relaxed">
-                            Ensure printer and computer are on the same Wi-Fi network (same SSID). Print a network configuration page from the printer’s control panel to confirm.
-                        </p>
+                <!-- Method 3: Network Connectivity -->
+                <section id="method3" class="method-section mb-8">
+                    <div class="bg-white rounded-lg border overflow-hidden">
+                        <div class="bg-gradient-to-r from-teal-600 to-cyan-600 text-white p-6">
+                            <h2 class="text-3xl font-bold">Method 3: Network Connectivity Fixes</h2>
+                            <p class="mt-2 opacity-90">Address Wi-Fi, IP, and firewall problems for network printers</p>
+                        </div>
+                        <div class="p-8">
+                            <div class="mb-12">
+                                <div class="step-illustration gradient-6 mb-6 relative">
+                                    <div class="step-number">6</div>
+                                    <i class="fas fa-wifi icon-graphic"></i>
+                                </div>
+                                <h3 class="text-2xl font-bold mb-4">Verify Network Connection and IP Address</h3>
+                                <p class="mb-4 text-gray-700">Print a network configuration page from the printer's control panel to check status.</p>
+                                <img src="https://kaas.hpcloud.hp.com/PROD/v2/renderbinary/12217141/12220364/con-lj-p-pro-m118-m203-ultra-m206-seagull-printing-self-test-pages/lj-pro-m118-m203-ultra-m206-seagull-network-summary2" alt="Example of printer network configuration page showing IP address" class="rounded-lg shadow-md mx-auto block max-w-lg mb-6">
+                                <ul class="space-y-3 text-gray-700">
+                                    <li class="flex gap-2"><i class="fas fa-check text-green-500 mt-1"></i><span>Ensure printer and computer are on the same Wi-Fi network (same SSID)</span></li>
+                                    <li class="flex gap-2"><i class="fas fa-check text-green-500 mt-1"></i><span>Restart router if IP conflicts occur</span></li>
+                                    <li class="flex gap-2"><i class="fas fa-check text-green-500 mt-1"></i><span>Reserve a static IP for the printer in router settings for stability</span></li>
+                                </ul>
+                            </div>
+
+                            <div class="mb-12">
+                                <h3 class="text-2xl font-bold mb-4">Check Firewall and Security Software</h3>
+                                <p class="mb-4 text-gray-700">Antivirus or firewall may block printer ports.</p>
+                                <ul class="space-y-3 text-gray-700">
+                                    <li class="sub-step">Temporarily disable third-party antivirus to test</li>
+                                    <li class="sub-step">Windows: Allow printer app through Windows Defender Firewall</li>
+                                    <li class="sub-step">Add exceptions for ports 9100 (raw printing), 515/631 (LPD/CUPS)</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-                </div>
+                </section>
 
-                <!-- Step 4 -->
-                <div class="step-card bg-white p-8 rounded-3xl border border-slate-200 flex gap-8 items-start">
-                    <div class="bg-blue-600 text-white w-12 h-12 rounded-full flex-shrink-0 flex items-center justify-center text-xl font-bold">4</div>
-                    <div>
-                        <h4 class="text-xl font-bold mb-3">IP Address & DHCP Logic</h4>
-                        <p class="text-slate-600 leading-relaxed">
-                            Dynamic IP changes can break established connections. Restart the router or assign a reserved IP in router settings for consistent addressing.
-                        </p>
+                <!-- Method 4: Advanced Diagnostics -->
+                <section id="method4" class="method-section mb-8">
+                    <div class="bg-white rounded-lg border p-8">
+                        <h2 class="text-3xl font-bold mb-6">Method 4: Advanced Diagnostics</h2>
+                        <ul class="space-y-4 text-gray-700">
+                            <li class="flex gap-3"><i class="fas fa-microchip text-blue-600 text-xl"></i><span><strong>Update Printer Firmware:</strong> Check manufacturer site for updates to fix known bugs.</span></li>
+                            <li class="flex gap-3"><i class="fas fa-tools text-blue-600 text-xl"></i><span><strong>Use Manufacturer Tools:</strong> HP Print and Scan Doctor, Epson diagnostics, etc.</span></li>
+                            <li class="flex gap-3"><i class="fas fa-print text-blue-600 text-xl"></i><span><strong>Print Test Page Directly from Printer:</strong> Confirms hardware is functional independently of computer.</span></li>
+                        </ul>
                     </div>
-                </div>
+                </section>
 
-                <!-- Step 5 -->
-                <div class="step-card bg-white p-8 rounded-3xl border border-slate-200 flex gap-8 items-start">
-                    <div class="bg-blue-600 text-white w-12 h-12 rounded-full flex-shrink-0 flex items-center justify-center text-xl font-bold">5</div>
-                    <div>
-                        <h4 class="text-xl font-bold mb-3">Set as Default Printer</h4>
-                        <p class="text-slate-600 leading-relaxed">
-                            Windows: Settings → Devices → Printers & scanners → Select printer → Manage → Set as default.<br>
-                            Mac: System Settings → Printers & Scanners → Select printer in list → Set as default.
-                        </p>
+                <!-- Expert Tips -->
+                <section id="tips" class="method-section mb-8 bg-white rounded-lg border p-8">
+                    <h2 class="text-3xl font-bold mb-6">Expert Tips for Prevention</h2>
+                    <ul class="space-y-4">
+                        <li class="tip-box p-4 rounded-lg"><strong>Keep drivers updated</strong> automatically via manufacturer apps.</li>
+                        <li class="tip-box p-4 rounded-lg"><strong>Use wired connection</strong> for critical printers to avoid Wi-Fi instability.</li>
+                        <li class="tip-box p-4 rounded-lg"><strong>Reserve IP address</strong> in router for network printers.</li>
+                        <li class="tip-box p-4 rounded-lg"><strong>Regularly restart</strong> printer and router monthly.</li>
+                    </ul>
+                </section>
+
+                <!-- FAQ -->
+                <section id="faq" class="method-section bg-white rounded-lg border p-8">
+                    <h2 class="text-3xl font-bold mb-6">Frequently Asked Questions</h2>
+                    <div class="space-y-6">
+                        <details class="border rounded-lg p-4">
+                            <summary class="font-bold cursor-pointer">Why does my printer go offline after sleep mode?</summary>
+                            <p class="mt-3 text-gray-700">Power-saving modes can disconnect network links. Disable eco/sleep features or use wired connection.</p>
+                        </details>
+                        <details class="border rounded-lg p-4">
+                            <summary class="font-bold cursor-pointer">Is it safe to reset the printing system on Mac?</summary>
+                            <p class="mt-3 text-gray-700">Yes, but it removes all printers. You'll need to re-add them afterward.</p>
+                        </details>
+                        <details class="border rounded-lg p-4">
+                            <summary class="font-bold cursor-pointer">What if nothing works?</summary>
+                            <p class="mt-3 text-gray-700">Contact manufacturer support with your model number and error details for hardware diagnosis.</p>
+                        </details>
                     </div>
-                </div>
+                </section>
+            </main>
+        </div>
+    </div>
 
-                <!-- Step 6 -->
-                <div class="step-card bg-white p-8 rounded-3xl border border-slate-200 flex gap-8 items-start">
-                    <div class="bg-blue-600 text-white w-12 h-12 rounded-full flex-shrink-0 flex items-center justify-center text-xl font-bold">6</div>
-                    <div>
-                        <h4 class="text-xl font-bold mb-3">Disable "Use Printer Offline" Mode</h4>
-                        <p class="text-slate-600 leading-relaxed">
-                            Windows: Right-click printer → See what’s printing → Printer menu → Uncheck “Use Printer Offline” if active.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Step 7 -->
-                <div class="step-card bg-white p-8 rounded-3xl border border-slate-200 flex gap-8 items-start">
-                    <div class="bg-blue-600 text-white w-12 h-12 rounded-full flex-shrink-0 flex items-center justify-center text-xl font-bold">7</div>
-                    <div>
-                        <h4 class="text-xl font-bold mb-3">Clear Print Queue</h4>
-                        <p class="text-slate-600 leading-relaxed">
-                            Open print queue → Cancel or delete all pending jobs. This removes corrupted spool files blocking new print data.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Step 8 -->
-                <div class="step-card bg-white p-8 rounded-3xl border border-slate-200 flex gap-8 items-start">
-                    <div class="bg-blue-600 text-white w-12 h-12 rounded-full flex-shrink-0 flex items-center justify-center text-xl font-bold">8</div>
-                    <div>
-                        <h4 class="text-xl font-bold mb-3">Restart Print Spooler Service</h4>
-                        <p class="text-slate-600 leading-relaxed">
-                            Windows: Press Win+R → type services.msc → Find “Print Spooler” → Right-click → Restart.<br>
-                            Mac: Reset printing system (removes all printers; re-add afterward).
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Step 9 -->
-                <div class="step-card bg-white p-8 rounded-3xl border border-slate-200 flex gap-8 items-start">
-                    <div class="bg-blue-600 text-white w-12 h-12 rounded-full flex-shrink-0 flex items-center justify-center text-xl font-bold">9</div>
-                    <div>
-                        <h4 class="text-xl font-bold mb-3">Reinstall or Update Drivers</h4>
-                        <p class="text-slate-600 leading-relaxed">
-                            Download the latest drivers from the official manufacturer website (HP, Epson, Canon, etc.) for your exact printer model and OS version.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Step 10 -->
-                <div class="step-card bg-white p-8 rounded-3xl border border-slate-200 flex gap-8 items-start">
-                    <div class="bg-blue-600 text-white w-12 h-12 rounded-full flex-shrink-0 flex items-center justify-center text-xl font-bold">10</div>
-                    <div>
-                        <h4 class="text-xl font-bold mb-3">Check Firewall & Port Rules</h4>
-                        <p class="text-slate-600 leading-relaxed">
-                            Ensure printer communication ports (9100, 515, 631) are allowed in Windows Defender Firewall or third-party security software.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Step 11 -->
-                <div class="step-card bg-white p-8 rounded-3xl border border-slate-200 flex gap-8 items-start">
-                    <div class="bg-blue-600 text-white w-12 h-12 rounded-full flex-shrink-0 flex items-center justify-center text-xl font-bold">11</div>
-                    <div>
-                        <h4 class="text-xl font-bold mb-3">Update Printer Firmware</h4>
-                        <p class="text-slate-600 leading-relaxed">
-                            Visit the manufacturer’s support site, download the latest firmware for your model, and apply it via USB or network update utility.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Step 12 -->
-                <div class="step-card bg-white p-8 rounded-3xl border border-slate-200 flex gap-8 items-start">
-                    <div class="bg-blue-600 text-white w-12 h-12 rounded-full flex-shrink-0 flex items-center justify-center text-xl font-bold">12</div>
-                    <div>
-                        <h4 class="text-xl font-bold mb-3">Print Test Page for Validation</h4>
-                        <p class="text-slate-600 leading-relaxed">
-                            From printer settings or control panel, print a test page. Success confirms full communication restoration between OS and hardware.
-                        </p>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="mt-12 text-center">
-                <p class="text-sm italic text-slate-500">
-                    All guidance is based on standard manufacturer-recommended procedures and is for educational purposes only.
-                </p>
-            </div>
-        </section>
-
-    </main>
-
-    <!-- FOOTER -->
-    <footer class="bg-slate-900 text-slate-300 pt-16 pb-10">
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-12 mt-20">
         <div class="max-w-7xl mx-auto px-4 text-center">
-            <div class="flex items-center justify-center gap-3 mb-6">
-                <div class="bg-blue-600 text-white p-3 rounded-xl icon-circle">
-                    <i class="fas fa-print"></i>
-                </div>
-                <span class="text-2xl font-bold">DigiTech</span>
-            </div>
-            <p class="text-sm max-w-2xl mx-auto mb-8">
-                © 2026 DigiTech Educational Platform. Independent open-access learning resource dedicated to printer technology and troubleshooting education.<br>
-                No commercial repair services or brand-specific support provided.
-            </p>
-            <div class="flex justify-center gap-8 text-sm">
-                <a href="privacy.html" class="hover:text-white transition">Privacy Policy</a>
-                <a href="terms.html" class="hover:text-white transition">Terms of Service</a>
-                <a href="contact.html" class="hover:text-white transition">Contact Us</a>
-            </div>
+            <p class="text-sm">© 2026 DigiTech Educational Platform. Independent resource for printer technology education.</p>
+            <p class="text-xs mt-2">This guide is for educational purposes. Always refer to official manufacturer support for your specific model.</p>
         </div>
     </footer>
-
 </body>
 </html>
